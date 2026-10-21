@@ -11,13 +11,13 @@ module Memory16x32(
 
 logic [31:0] memory[0:15];
 
-always_ff @(posedge clk, posedge rst)
+always_ff @(posedge clk, negedge rst_n)
 begin
-    if(rst_n)
+    if(!rst_n)
     begin
         Data_out <= 32'b0;
         Valid_out <= 1'b0;
-        memory <= '{defaDault:0};
+        memory <= '{default:0};
     end
     else if(EN)
     begin

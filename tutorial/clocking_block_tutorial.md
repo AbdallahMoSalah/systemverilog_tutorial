@@ -37,9 +37,10 @@ IEEE Std 1800 solved this at the simulator engine level by dividing every simula
 +-------------------+--------------------+------------------+-----------------+
 ```
 
-- **Preponed Region (Clause 4.4.2.1, Page 65)**: Captures values right before any clock edge events occur.
+- **Preponed Region (Clause 4.4.2.1, Page 65)**: Captures values right before any clock edge events occur (used by `#1step` input sampling).
 - **Active / NBA Region (Clause 4.4.2.2 & 4.4.2.4, Page 65)**: Design flip-flops and combinational logic update here.
-- **Reactive / Re-NBA Region (Clause 4.4.2.6 & 4.4.2.8, Page 66)**: Testbench programs and clocking block synchronous drives execute here.
+- **Observed Region (Clause 4.4.2.5, Page 65)**: Evaluates concurrent assertion (SVA) property expressions.
+- **Reactive / Re-NBA Region (Clause 4.4.2.6 & 4.4.2.8, Page 66)**: Executes assertion **action blocks** (pass/fail statements: `$error`, `$display`), testbench reactive events, and checkers.
 
 ---
 
@@ -80,7 +81,7 @@ endclocking
 
 ## 4. Practical Implementation: Interface with Clocking Block
 
-Applying clocking blocks to the [`Memory16x32`](file:///media/abdallah-salah/eng/Verification/LAB1_Ver_plan/Memory16x32.sv) DUT:
+Applying clocking blocks to the [`Memory16x32`] DUT:
 
 ```systemverilog
 interface mem_intf (input logic clk, input logic rst_n);

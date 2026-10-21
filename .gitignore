@@ -38,4 +38,8 @@ search_lrm.py
 .vscode/
 .agents/
 
+# UVM source files / directory
+uvm*/
+uvm-1.2
+
 !LAB1_Ver_plan/Verification document.pdf
