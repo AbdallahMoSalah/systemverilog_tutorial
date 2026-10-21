@@ -1,0 +1,35 @@
+# ModelSim / QuestaSim artifacts in any directory
+**/work/
+**/work_*/
+work/
+work_*/
+**/modelsim.ini
+modelsim.ini
+
+# Ignore ModelSim compilation & temp output
+*.mti
+*.dat
+*.dbs
+*.psm
+*.bak
+*.cmp
+*.bsf
+*.log
+
+# Simulation output
+**/wlf*
+**/*.wlf
+**/*.vstf
+**/*.ucdb
+**/cov*/
+**/transcript*
+sc_dpiheader.h
+vsim.dbg
+
+# Large documents & reference PDFs
+*.pdf
+Svstandard.txt
+
+# Editor & IDE configs
+.vscode/
+.agents/
