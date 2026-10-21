@@ -29,7 +29,12 @@ vsim.dbg
 # Large documents & reference PDFs
 *.pdf
 Svstandard.txt
+verification_document_sections_combined.jpg
+
+# Helper / scratch scripts
+search_lrm.py
 
 # Editor & IDE configs
 .vscode/
 .agents/
+
